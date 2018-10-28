@@ -1,0 +1,7 @@
+assign_dir test
+before nat ecmp
+before ecmp hashes
+before ipsg qos
+before qos nat
+before l2_forward nat
+end_of_sfc

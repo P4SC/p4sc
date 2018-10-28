@@ -1,0 +1,7 @@
+
+control ingress {
+	if (ethernet.etherType == ETHERTYPE_ARP) {
+		apply(arp);
+	}
+
+

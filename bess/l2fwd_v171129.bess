@@ -1,0 +1,9 @@
+# l2 Forwarding
+
+dpdk_ports = 2 
+print('Using %d DPDK ports... (envvar "BESS_PORTS")' % dpdk_ports)
+
+p1 = PMDPort(port_id=0, num_inc_q=1, num_out_q=1)
+p2 = PMDPort(port_id=1, num_inc_q=1, num_out_q=1)
+
+PortInc(port=p1.name) -> MACSwap() -> MACSwap() -> PortOut(port=p2.name)

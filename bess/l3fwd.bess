@@ -1,0 +1,13 @@
+# l3 Forwarding
+
+dpdk_ports = 2
+print('Using %d DPDK ports... (envvar "BESS_PORTS")' % dpdk_ports)
+
+p1 = PMDPort(port_id=0)#, num_inc_q=1, num_out_q=1)
+p2 = PMDPort(port_id=1)#, num_inc_q=1, num_out_q=1)
+
+QueueInc(port=p1, qid=0) -> ipfwd::IPLookup()
+ipfwd:1 -> QueueOut(port=p2, qid=0)
+
+ipfwd.add(prefix='10.0.0.0', prefix_len=8, gate=1)
+ipfwd.add(prefix='0.0.0.0', prefix_len=0, gate=1)

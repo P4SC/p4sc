@@ -1,0 +1,4 @@
+assign_dir c4
+before nat ipv4_forward
+before ipv4_forward ipsg
+end_of_sfc

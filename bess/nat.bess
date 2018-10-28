@@ -1,0 +1,17 @@
+# NAT
+
+dpdk_ports = 2 
+print('Using %d DPDK ports... (envvar "BESS_PORTS")' % dpdk_ports)
+
+p1 = PMDPort(port_id=0)
+p2 = PMDPort(port_id=1)
+
+#nat_config = [{'ext_addr': '10.0.0.1'}, {'ext_addr': '10.0.0.2'}]
+
+#nat::NAT(ext_addrs=nat_config)
+
+PortInc(port=p1.name) -> IPSwap() -> IPSwap() -> ipfwd::IPLookup()
+ipfwd:1 -> PortOut(port=p2.name)
+
+ipfwd.add(prefix='10.0.0.0', prefix_len=8, gate=1)
+ipfwd.add(prefix='0.0.0.0', prefix_len=0, gate=1)

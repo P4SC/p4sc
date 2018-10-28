@@ -1,0 +1,20 @@
+# Firewall
+
+dpdk_ports = 2 
+print('Using %d DPDK ports... (envvar "BESS_PORTS")' % dpdk_ports)
+
+p1 = PMDPort(port_id=0)
+p2 = PMDPort(port_id=1)
+
+fw::ACL(rules=[{'src_ip': '10.0.0.0/24', 'drop': False},
+               {'src_ip': '192.0.0.0/24', 'drop': True},
+               {'src_ip': '1.0.0.0/24', 'drop': True},
+               {'src_ip': '10.0.1.0/24', 'drop': True},
+               {'src_ip': '10.1.0.0/16', 'drop': True}])
+
+PortInc(port=p1.name) -> ipfwd::IPLookup()
+ipfwd:1 -> fw
+fw -> PortOut(port=p2.name)
+
+ipfwd.add(prefix='10.0.0.0', prefix_len=8, gate=1)
+ipfwd.add(prefix='0.0.0.0', prefix_len=0, gate=1)

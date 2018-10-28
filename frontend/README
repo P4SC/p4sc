@@ -1,0 +1,17 @@
+P4SC frontend APIs
+
+1) convert midend SFC file based on mapping.txt:
+  funtion1: convert name to number
+    ./libMapping.py --file test/testMapping.txt --mapping-file ../mapping.txt --case 1
+    or "./libMapping.py -f test/testMapping.txt -m ../mapping.txt -c 1"
+  function2: convert number to name
+    ./libMapping.py --file test/testMapping.txt --mapping-file ../mapping.txt --case 2
+    or "./libMapping.py -f test/testMapping.txt -m ../mapping.txt -c 2"
+
+2) merge several SFC midend files:
+  step1: create a directory, eg."test/"
+  step2: write your SFC midend files using NF number, eg."1,2,3"
+  step3: use "test_i.txt" in which "i" indicates SFC number
+  step4: use script to merge sfcs, eg. ./libMerge.py --num 5 --dir test
+  step5: acquire the output sfc in eg.test/result.txt
+
