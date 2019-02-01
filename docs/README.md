@@ -1,6 +1,6 @@
 # P4SC: Towards High-Performance Service Function Chain Implementation on the P4-Capable Device
 
-This repository maintains the source codes of P4SC (i.e., P4 Service Chaining), a system that provides high-performance Service Function Chain (SFC for simplicity) implementation on the P4-capable switch. P4SC provides high-level primitives for users to write SFC construction requests. The converter of P4SC converts the input SFC requests to the corresponding P4 program, while observing the P4 grammar and minimizing the number of duplicate P4 tables. Moreover, the generator of P4SC wraps device APIs to provide convenient runtime management of SFC. Our experiments validates the capability of P4SC on various P4-capable devices, including the BMv2, NetFPGA-SUME, and Tofino.
+This repository maintains the source codes of P4SC (i.e., P4 Service Chaining), a system that provides high-performance Service Function Chain (SFC for simplicity) implementation on the P4-capable switch. P4SC provides high-level primitives for users to write SFC construction requests. The converter of P4SC converts the input SFC requests to the corresponding P4 program, while observing the P4 grammar and minimizing the number of duplicate P4 tables. Moreover, the generator of P4SC wraps device APIs to provide convenient runtime management of SFC. Our experiments validates the capability of P4SC on various P4-capable devices, including the BMv2, NetFPGA-SUME, and Tofino. Note that due to the limitation of license, we only release partial but important parts of P4SC source codes in this repository.
 
 ## How to install P4SC?
 
@@ -177,7 +177,3 @@ nfs = ['port_knocking', 'qos', 'ipsg', 'ipv4_forward', 'l2_forward',
 ```
 
 Congratulations! You have done this work. Now you can use your `Skeleton` to compose a SFC and generate P4 program.
-
-## Contact
-
-Xiang Chen, wasdnsxchen@gmail.com / cxailcy@gmail.com
