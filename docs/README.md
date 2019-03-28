@@ -87,7 +87,7 @@ The input of generator is mid-end SFC file (e.g., `result.txt`).
 
 And the output P4 program is produced in `backend/switch.p4`. 
 
-## How to add my own P4SC block?
+## Integrating new NFs into P4SC
 
 To achieve this target, you should accomplish following steps:
 
