@@ -1,8 +1,8 @@
-# P4SC: Towards High-Performance Service Function Chain Implementation on the P4-Capable Device
+# P4SC: A High Performance and Flexible Framework for Service Function Chain
 
 This repository maintains the source codes of P4SC (i.e., P4 Service Chaining), a system that provides high-performance Service Function Chain (SFC for simplicity) implementation on the P4-capable switch. P4SC provides high-level primitives for users to write SFC construction requests. The converter of P4SC converts the input SFC requests to the corresponding P4 program, while observing the P4 grammar and minimizing the number of duplicate P4 tables. Moreover, the runtime manager of P4SC provides convenient runtime management of SFC. Our experiments validates the capability of P4SC on various P4-capable devices, including the BMv2, NetFPGA-SUME, and Tofino. 
 
-Note that due to the limitation of NDA, we only release partial but important parts of P4SC source codes in this repository. Specifically, this repository contains: (1) complete source codes of converter, (2) partial source codes of generator used to generate P4 programs for BMv2. These source codes are enough to be used to implement SFCs atop BMv2. If you want more information about P4SC, please contact me via email: chenxiang2019@ict.ac.cn
+Note that due to the non-disclosure agreement, we only release partial but important parts of P4SC source codes in this repository. Specifically, this repository contains (1) complete source codes of converter, (2) partial source codes of generator used to generate P4 programs for BMv2, and (3) a Thrift-based script for managing SFCs at runtime. These source codes are enough to be used to implement SFCs atop BMv2. If you want more information about P4SC, please contact me via email: chenxiang2019@ict.ac.cn
 
 ## How to install P4SC?
 
@@ -87,7 +87,7 @@ The input of generator is mid-end SFC file (e.g., `result.txt`).
 
 And the output P4 program is produced in `backend/switch.p4`. 
 
-## Integrating new NFs into P4SC
+## Integrating NFs into P4SC
 
 To achieve this target, you should accomplish following steps:
 
