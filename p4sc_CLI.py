@@ -169,5 +169,7 @@ class p4scPrompt(cmd.Cmd):
 
 
 if __name__ == '__main__':
+    cmd = "./reset.sh"
+    status, output = commands.getstatusoutput(cmd)
     prompt = p4scPrompt()
     prompt.cmdloop('Starting P4SC command line interface...')

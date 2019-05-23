@@ -14,4 +14,9 @@ rm frontend/*.pyc
 rm frontend/lcsSrc/*.pyc
 rm frontend/tableCmpSrc/*.pyc
 
+cd bmv2/
+./cleanup.sh
+cd ..
 rm -rf bmv2/p4src 
+
+rm test/*.txt

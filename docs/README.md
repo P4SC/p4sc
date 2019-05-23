@@ -16,6 +16,12 @@ cd py-dag/
 python setup.py install
 ```
 
+3.Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
 ## How to run P4SC?
 
 ### Quick start
